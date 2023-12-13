@@ -13,7 +13,7 @@ const serverURL = process.env.REACT_APP_SERVER_URL;
 // console.log(serverURL);
 const secretEnKey = process.env.REACT_APP_SECRET_ENC_KEY
 
-
+console.log(serverURL);
 
 export function Login() {
   let navigate = useNavigate();
@@ -44,7 +44,7 @@ export function Login() {
     e.preventDefault();
     try {
       setLoading(true)
-      const response = await axios.post(`https://poised-fox-gloves.cyclic.app/api/Admin/login`, loginData);
+      const response = await axios.post(`${serverURL}/api/Admin/login`, loginData);
 
 
 

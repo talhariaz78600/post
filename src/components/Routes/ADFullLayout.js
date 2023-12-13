@@ -10,7 +10,7 @@ import axios from "axios";
 import { allusers, selecteUsers, selectAllPosts,  allPosts , selectAllPinnedPosts , allBumperPosts } from "../../Store/authSlice";
 import style from "./routes.module.css"
 
-const serverURL = process.env.REACT_APP_SERVER_URL
+const serverURL = process.env.REACT_APP_SERVER_URL;
 
 
 
@@ -27,7 +27,7 @@ const FullLayout = () => {
       try {
 
         setLoading(true)
-        const response = await axios.get(`https://poised-fox-gloves.cyclic.app/api/users/get_all_users`)
+        const response = await axios.get(`${serverURL}/api/users/get_all_users`)
         setLoading(false)
         if (response && response.status === 200) {
           console.log(response.data.users);
