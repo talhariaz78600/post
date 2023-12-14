@@ -45,12 +45,12 @@ console.log(Userposts)
 
                                         {
                                             Userposts.mediaTypes[index].includes("image") ?
-                                                <div className="carousel-item" data-bs-interval="3000">
+                                                <div className="carousel-item active" data-bs-interval="3000">
                                                     <img src={pst} className="d-block" style={{ width: "980px", height: "400px" }} alt="..." />
                                                 </div>
                                                 :
-                                                <div className="carousel-item" data-bs-interval="3000">
-                                                    <video  src={pst} className="d-block"  style={{ width: "980px", height: "400px" }} controls ></video>
+                                                <div className="carousel-item active" data-bs-interval="3000">
+                                                    <video  src={pst} controls ></video>
                                                 </div>
                                         }
 
