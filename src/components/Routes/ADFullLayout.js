@@ -63,10 +63,10 @@ const FullLayout = () => {
       try {
 
         setLoading(true)
-        const response = await axios.get(`${serverURL}/api/posts/get_all_posts`)
+        const response = await axios.get(`${serverURL}/api/posts/get_post`)
         setLoading(false)
         if (response && response.status === 200) {
-          // console.log(response.data.posts);
+          console.log(response.data.posts);
           dispatch(allPosts(response.data.posts))
           toast.success(response.data.message)
         }

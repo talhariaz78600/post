@@ -7,7 +7,8 @@ import { PinnedPost } from "../Pages/PinnedPosts";
 import { Posts } from "../Pages/Posts";
 import { UserPosts } from "../Pages/userPosts";
 import { UserChats } from "../Pages/chats";
-import { Chat } from "../Pages/chatPage";
+
+import PostDetailPage from "../Pages/PostDetailPage";
 const FullLayout = lazy(() => import("./ADFullLayout"));
 const Starter = lazy(() => import("../Home/Starter"));
 export const ThemeRoutes = [
@@ -23,8 +24,8 @@ export const ThemeRoutes = [
       { path: "AdminDashboard/UserDetails/:id", exact: true, element: <PrivateRouteAdmin element={<UserDetailpage />} /> },
       { path: "AdminDashboard/UserDetails/:id/Posts", exact: true, element: <PrivateRouteAdmin element={<UserPosts />} /> },
       { path: "AdminDashboard/UserDetails/:id/UserChats", exact: true, element: <PrivateRouteAdmin element={<UserChats />} /> },
-      { path: "Admin/AdminDashboard/UserDetails/:id/UserChats/:ChatId/Chat", exact: true, element: <PrivateRouteAdmin element={<Chat />} /> },
-
+     
+      { path: "AdminDashboard/UserDetails/:id/Posts/:postid/Postdetail", exact: true, element: <PrivateRouteAdmin element={<PostDetailPage/>} /> }
 
     ],
   },

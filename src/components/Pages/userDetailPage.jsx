@@ -20,7 +20,7 @@ export function UserDetailpage() {
     let [loading, setloading] = useState(false);
     let [user, setUsers] = useState();
     let [Userposts, setUserposts] = useState([]);
-    let [Userpassword, setuserpassword] = useState('');
+   
 
     const [selectedOption, setSelectedOption] = useState(user ? user.status === true ? "Active" : "Suspended" : 'Select..');
 
@@ -34,6 +34,7 @@ export function UserDetailpage() {
         });
 
         setUsers(CurrentUser)
+
 
     }, [id, storeUser])
 
@@ -54,50 +55,17 @@ export function UserDetailpage() {
 
     };
 
-    const handelSubmitStatus = async (e) => {
-        e.preventDefault()
-
-        if (Userpassword === '') {
-            toast.info("Please enter new password")
-            return
-        }
-
-        try {
-
-            setloading(true)
-            const response = await axios.post(`${serverURL}/api/users/${id}/update_user_password`, {
-                password: Userpassword
-            })
-            console.log(response.data.user);
-            if (response && response.status === 200) {
-                setloading(false)
-                setUsers(response.data.user)
-                toast.success(response.data.message)
-            }
-        } catch (error) {
-            setloading(false)
-            if (error.response.status === 401) {
-                toast.error(error.response.message);
-            } else if (error.response.status === 400) {
-                toast.error(error.response.message);
-            } else if (error.response.status === 500) {
-                toast.error(error.response.message);
-
-            } else {
-                toast.error("Failed to Update user status")
-            }
-
-        }
-        setSelectedOption('Select..')
-
-    }
+    
 
 
-    const handlepasswordchange= async()=>{
+    const handelSubmitStatus= async(e)=>{
+        e.preventDefault();
+        
         if (selectedOption === 'Select..') {
-            toast.info("Please Select Any Options")
+            toast.info("Please select status option")
             return
         }
+
 
         try {
 
@@ -125,6 +93,8 @@ export function UserDetailpage() {
             }
 
         }
+
+        setSelectedOption('Select..')
     }
     return (<>
         <div className={`p-2  text-light ${style.Sheading} `}>
@@ -158,7 +128,7 @@ export function UserDetailpage() {
                                 <span className="fw-bold">email</span> : <span>{user.email}</span>
                             </p>
                             <p>
-                                <span className="fw-bold">Password</span> : <span>{user.password}</span> <span className="mx-4"><i  data-bs-toggle="modal" data-bs-target="#exampleModal" class="fa-solid fa-pen-to-square text-primary"></i></span>
+                                <span className="fw-bold">Password</span> : <span>{user.password}</span> 
                             </p>
                             <p>
                                 <span className="fw-bold" >Account</span> :  {user.isverified === true ? <span className="text-success fw-bolder">Verified</span> : <span className="text-danger fw-bolder ">Unverified</span>}
@@ -220,30 +190,9 @@ export function UserDetailpage() {
             </div>
 
 
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Change password</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <div className="input-group mb-3">
-                                <input type="text" className="form-control" placeholder="password" value={user.password}  onChange={(e)=>{
-                                    e.preventDefault();
-                                    setuserpassword(e.target.value);
-
-                                }}/>
-                            </div>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary" onClick={handlepasswordchange}>Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+           
+         </div>
+       
 
 
 
