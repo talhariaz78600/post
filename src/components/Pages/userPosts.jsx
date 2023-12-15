@@ -20,7 +20,7 @@ export function UserPosts() {
     const storeAllPosts = useSelector(selectAllPosts)
     const { id } = useParams();
     console.log(id);
-    let [loading, setloading] = useState(false);
+    let [loading, setloading] = useState(true);
     let [Userposts, setUserposts] = useState([]);
 
     const [modal, setModal] = useState(false);
@@ -37,7 +37,9 @@ export function UserPosts() {
         let CurrentUserPosts = storeAllPosts.filter((post) => {
             return post.CreatorID === id;
         });
-
+        if(CurrentUserPosts){
+            setloading(false)
+        }
         setUserposts(CurrentUserPosts);
 
     }, [storeAllPosts, id])

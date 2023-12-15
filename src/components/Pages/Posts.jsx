@@ -1,23 +1,24 @@
 import React, { useEffect } from "react";
 import style from "./ui.module.css"
 import { useState } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
+// import { toast } from "react-toastify";
+// import axios from "axios";
 import { Loader } from "../Loader/loader";
-import { useDispatch, useSelector } from "react-redux";
-import { selectAllPosts, updatePostStatus, addPinnedPosts, selectAllPinnedPosts } from "../../Store/authSlice";
+import {  useSelector } from "react-redux"; //useDispatch,
+import { selectAllPosts, selectAllPinnedPosts } from "../../Store/authSlice"; //, updatePostStatus, addPinnedPosts,
 import { Button } from "reactstrap";
 import { DeleteModel } from "./DeleteModel";
 import { EditPost } from "./EditPost";
+import { Link } from "react-router-dom";
 // import imageCompression from 'browser-image-compression';
 
-const serverURL = process.env.REACT_APP_SERVER_URL
+// const serverURL = process.env.REACT_APP_SERVER_URL
 
 
 export function Posts() {
     // const [selectedOption, setSelectedOption] = useState('Select..');
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const StorePosts = useSelector(selectAllPosts);
     const StorePinnedPosts = useSelector(selectAllPinnedPosts);
     const [loading, setloading] = useState(false);
@@ -121,7 +122,7 @@ export function Posts() {
                                 <h2 className="fw-bold fs-5">Posted Date</h2>
                             </div>
                             <div className="col">
-                                <h2 className="fw-bold fs-5">Status</h2>
+                                <h2 className="fw-bold fs-5">Delete</h2>
                             </div>
 
                         </div>
@@ -129,31 +130,52 @@ export function Posts() {
                     {StorePosts.map((pst, index) => {
                         return <div key={index} className={style.Content}>
                             <div className="row gap-2 p-2">
-                                <div className="row gap-2 p-1">
-                                    <div className="col">
-                                        <div>
-                                            <img src={pst.postMediaUrl} alt="PostMedia" style={{ borderRadius: "1rem" }} width={"120rem"} height={"120rem"} />
+                            <div className="row gap-2">
+                            
+                            <div className="col">
+                            {/* /AdminDashboard/UserDetails/:id/Posts/:postid/Postdetail */}
+                                <Link to={`/Admin/AdminDashboard/UserDetails/${pst.CreatorID}/Posts/${pst._id}/Postdetail`}>
+                                {
+                                    pst.mediaTypes[0].includes("image") ?
+                                        < div >
+                                            <img src={pst.mediaUrls[0]} alt="PostMedia" style={{ borderRadius: "1rem" }} width={"100rem"} height={"100rem"} />
 
                                         </div>
-                                    </div>
-                                    <div className="col  d-flex align-items-center justify-content-center">
-                                        <h2 className="fw-medium fs-6">{pst.postContent}</h2>
-                                    </div>
+                                        :
+                                        <div>
+                                            <video src={pst.mediaUrls[0]} controls ></video>
+                                        </div>
+                                }
 
-                                    <div className="col d-flex align-items-center justify-content-center">
-                                        <h2 className="fw-medium fs-6">{pst.userName}</h2>
-                                    </div>
-                                    <div className="col d-flex align-items-center justify-content-center">
-                                        <h2 className="fw-medium fs-6">{pst.PostCreated ? pst.PostCreated.slice(0, 15) : 'NaN'}</h2>
-                                    </div>
-                                    <div className="col d-flex align-items-center justify-content-center">
-                                        {pst.underApproval ? <span className="fw-bold fs-6 text-warning">Pending</span> : <div>
-                                            {pst.isApproved ? <span className="fw-bold fs-6 text-success">Approved</span> : <span className="fw-bold fs-6 text-danger">Disapproved</span>}
-                                        </div>}
+                            </Link>
+                            </div>
 
-                                    </div>
-                                </div>
-                                <div className="row gap-2 p-1">
+                            <div className="col  d-flex align-items-center justify-content-center">
+                                <h2 className="fw-medium fs-6">{pst.postDescription
+                                }</h2>
+                            </div>
+
+                            <div className="col d-flex align-items-center justify-content-center">
+                                <h2 className="fw-medium fs-6">{pst.postedBy
+                                }</h2>
+                            </div>
+                            <div className="col d-flex align-items-center justify-content-center">
+                                <h2 className="fw-medium fs-6">{pst.postCreated ? pst.postCreated.slice(0, 15) : 'NaN'}</h2>
+                            </div>
+                  
+                            <div className="col d-flex align-items-center justify-content-center">
+                                <Button className="Reject"
+                                    onClick={() => {
+                                        setDeletedId(pst._id)
+                                        setModal(!modal);
+                                        setdeleteWhatUsers("Post")
+                                        setpContent(' Are you sure you want to Delete  this Post? This action cannot be undone.')
+                                    }}
+                                ><i className="bi bi-trash3"></i></Button>
+                            </div>
+
+                        </div>
+                                {/* <div className="row gap-2 p-1">
 
 
                                     <div className="col d-flex align-items-center justify-content-center">
@@ -257,7 +279,7 @@ export function Posts() {
                                             }}
                                         ><i className="bi bi-trash3"></i></Button>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     })}

@@ -550,3 +550,16 @@
 .buttonBump:hover {
   background-color:  rgb(44, 180, 44); 
 }
+
+
+.postdetailDIv {
+   /* display: flex; */
+  justify-content: space-between;
+  align-items: center; 
+  gap: 2;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  /* padding: 40px; */
+  border-radius: 10px;
+
+
+}
