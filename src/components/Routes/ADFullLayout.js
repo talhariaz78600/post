@@ -30,7 +30,7 @@ const FullLayout = () => {
         const response = await axios.get(`${serverURL}/api/users/get_all_users`)
         setLoading(false)
         if (response && response.status === 200) {
-          console.log(response.data.users);
+          // console.log(response.data.users);
           dispatch(allusers(response.data.users))
           toast.success(response.data.message)
         }
@@ -66,7 +66,7 @@ const FullLayout = () => {
         const response = await axios.get(`${serverURL}/api/posts/get_post`)
         setLoading(false)
         if (response && response.status === 200) {
-          console.log(response.data.posts);
+          // console.log(response.data.posts);
           dispatch(allPosts(response.data.posts))
           toast.success(response.data.message)
         }
@@ -98,11 +98,11 @@ const FullLayout = () => {
       try {
 
         setLoading(true)
-        const response = await axios.get(`${serverURL}/api/PinnedPosts/get_all_Pinned`)
+        const response = await axios.get(`${serverURL}/api/groups/get_groups`)
         setLoading(false)
         if (response && response.status === 200) {
-          // console.log(response.data.users);
-          dispatch(allBumperPosts(response.data.posts))
+          // console.log(response.data);
+          dispatch(allBumperPosts(response.data.groups))
           toast.success(response.data.message)
         }
       } catch (error) {

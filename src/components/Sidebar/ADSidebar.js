@@ -83,19 +83,19 @@ const Sidebar = () => {
             </Link>
           </NavItem>
 
-          <NavItem><strong> BumperPost </strong> </NavItem>
+          <NavItem><strong> Groups </strong> </NavItem>
           <NavItem className="sidenav-bg">
             <Link
-              to={"/Admin/AdminDashboard/BumperPost"}
+              to={"/Admin/AdminDashboard/Groups"}
               className={
-                location.pathname === "/Admin/AdminDashboard/BumperPost"
+                location.pathname === "/Admin/AdminDashboard/Groups"
                   ? " text-primary bg-light fw-bold nav-link py-3 color"
                   : "nav-link text-secondary py-3"
               }
             >
-              <img src={"/bumperPost.png"} width={"20px"} height={"20px"} alt="img" />
+              <img src={"/groups2.jpeg"} width={"20px"} height={"20px"} alt="img" />
 
-              <span className="ms-3 d-inline-block">Pinned Posts</span>
+              <span className="ms-3 d-inline-block">Groups</span>
             </Link>
           </NavItem>
 

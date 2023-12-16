@@ -1,10 +1,11 @@
 import React from "react";
 import style from "./ui.module.css"
 import { useState } from "react";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectAllPinnedPosts } from "../../Store/authSlice";
 import { Button } from "reactstrap";
 import { DeleteModel } from "./DeleteModel";
+import { Link } from "react-router-dom";
 
 
 
@@ -19,17 +20,10 @@ export function PinnedPost() {
     const [pContent, setpContent] = useState()
     console.log(StorePinnedPosts);
 
-
-
-
-
-   
-
-
     return (<>
         <div className={`p-2  text-light ${style.Sheading} `}>
             <h2 className={style.Heading}>
-            Pinned Posts
+                Groups
             </h2>
         </div>
 
@@ -40,23 +34,24 @@ export function PinnedPost() {
                     <div className={style.HeadingContent}>
                         <div className="row gap-2">
                             <div className="col">
-                                <h2 className="fw-bold fs-5">Media</h2>
+                                <h2 className="fw-bold fs-5">Thumbnail</h2>
                             </div>
                             <div className="col">
-                                <h2 className="fw-bold fs-5">Content</h2>
+                                <h2 className="fw-bold fs-5">Group Name
+                                </h2>
                             </div>
 
                             <div className="col">
-                                <h2 className="fw-bold fs-5">Posted by</h2>
+                                <h2 className="fw-bold fs-5">Created by</h2>
                             </div>
                             <div className="col">
                                 <h2 className="fw-bold fs-5">Posted Date</h2>
                             </div>
-                           
+
                             <div className="col">
                                 <h2 className="fw-bold fs-5">Action</h2>
                             </div>
-                          
+
                         </div>
                     </div>
                     {StorePinnedPosts.map((pst, index) => {
@@ -64,28 +59,27 @@ export function PinnedPost() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <img src={pst.postMediaUrl} alt="PostMedia" style={{ borderRadius: "1rem" }} width={"120rem"} height={"120rem"} />
-
+                                        <Link to={`/admin/AdminDashboard/Groups/${pst._id}`}><img src={pst.groupThumbnilURL} alt="GroupThumbnail" style={{ borderRadius: "1rem" }} width={"120rem"} height={"120rem"} /></Link>
                                     </div>
                                 </div>
                                 <div className="col  d-flex align-items-center justify-content-center">
-                                    <h2 className="fw-medium fs-6">{pst.postContent}</h2>
+                                    <h2 className="fw-medium fs-6">{pst.groupName}</h2>
                                 </div>
 
                                 <div className="col d-flex align-items-center justify-content-center">
-                                    <h2 className="fw-medium fs-6">{pst.userName}</h2>
+                                    <h2 className="fw-medium fs-6">{pst.createdBy}</h2>
                                 </div>
                                 <div className="col d-flex align-items-center justify-content-center">
-                                    <h2 className="fw-medium fs-6">{pst.PostCreated ? pst.PostCreated.slice(0, 15) : 'NaN'}</h2>
+                                    <h2 className="fw-medium fs-6">{pst.createdDate? pst.createdDate.slice(0, 15) : 'NaN'}</h2>
                                 </div>
-                               
+
                                 <div className="col d-flex align-items-center justify-content-center">
                                     <Button className="Reject"
                                         onClick={() => {
                                             setDeletedId(pst._id)
                                             setModal(!modal);
-                                            setdeleteWhatUsers("BumperPost")
-                                            setpContent(' Are you sure you want to Delete  this Pinned Post? This action cannot be undone.')
+                                            setdeleteWhatUsers("group")
+                                            setpContent(' Are you sure you want to Delete  this Group? This action cannot be undone.')
                                         }}
                                     ><i className="bi bi-trash3"></i></Button>
                                 </div>

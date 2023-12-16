@@ -13,7 +13,7 @@ const Starter = () => {
   const storeAllBumperPosts  = useSelector(selectAllPinnedPosts)
   const [SuspendedUsers, setSuspendedUsers] = useState()
   const [ApprovedPosts, setApprovedPosts] = useState(0)
-  const [ApprovedBumperPosts, setApprovedBumperPosts] = useState(0)
+  // const [ApprovedBumperPosts, setApprovedBumperPosts] = useState(0)
 
 
   useEffect(() => {
@@ -37,13 +37,13 @@ const Starter = () => {
   }, [storeAllPosts])
 
   useEffect(() => {
-    let MyApprovedBumperPosts = 0;
+    // let MyApprovedBumperPosts = 0;/
     storeAllBumperPosts.forEach((userobjects) => {
-      if (userobjects.isBumper === true) {
-        MyApprovedBumperPosts++;
-      }
+      // if (userobjects.isBumper === true) {
+      //   MyApprovedBumperPosts++;
+      // }
     })
-    setApprovedBumperPosts(MyApprovedBumperPosts)
+    // setApprovedBumperPosts(MyApprovedBumperPosts)
   }, [storeAllBumperPosts])
 
 
@@ -153,22 +153,22 @@ const Starter = () => {
             {storeAllBumperPosts && storeAllBumperPosts.length > 0 && <>
               <div>
                 <p className="fw-bold ">
-                  Bumper Posts
+                  Groups
                 </p>
               </div>
               <Row>
-                <Col sm="6" lg="4">
+                <Col sm="12" lg="12">
                   <TopCards
                     bg=" bg-light-info text-info"
                     title="Profit"
-                    subtitle="Total Bumper Post "
+                    subtitle="Total Groups"
                     earning={storeAllBumperPosts.length}
                     icon="bi bi-people"
                   />
                 </Col>
 
 
-                <Col sm="6" lg="4">
+                {/* <Col sm="6" lg="4">
                   <TopCards
                     bg="bg-light-success text-success"
                     title="Sales"
@@ -176,16 +176,16 @@ const Starter = () => {
                     earning={ApprovedBumperPosts}
                     icon="bi bi-person-check"
                   />
-                </Col>
-                <Col sm="6" lg="4">
+                </Col> */}
+                {/* <Col sm="6" lg="4">
                   <TopCards
                     bg="bg-light-danger text-danger"
                     title="Refunds"
-                    subtitle="Pending Bumper Posts"
+                    subtitle="Pending B"
                     earning={+(storeAllBumperPosts.length) - +(ApprovedBumperPosts)}
                     icon="bi bi-person-dash"
                   />
-                </Col>
+                </Col> */}
               </Row>
             </>}
             

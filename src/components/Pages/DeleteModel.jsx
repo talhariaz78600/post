@@ -59,10 +59,10 @@ export function DeleteModel(props) {
                                 props.setDeletedId('')
 
                             }
-                        } else if (props.deleteWhat === 'BumperPost') {
+                        } else if (props.deleteWhat === 'group') {
                             setloading(true)
-                            console.log("delete bumper post");
-                            let response = await axios.delete(`${serverURL}/api/PinnedPosts/${props.deltedId}/delete_Pinned_Post`)
+                            console.log("delete groups");
+                            let response = await axios.delete(`${serverURL}/api/groups/${props.deltedId}/delete_Group`)
                             if (response && response.status === 200) {
                                 setloading(false)
                                 console.log(response.data.BumperPost);

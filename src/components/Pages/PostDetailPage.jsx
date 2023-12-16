@@ -51,12 +51,12 @@ function PostDetailPage() {
 
                                                         {
                                                             Userposts.mediaTypes[index].includes("image") ?
-                                                                <div className={`carousel-item ${index===0?"active":""}`} data-bs-interval="2000">
-                                                                    <img src={pst} className="d-block rounded" style={{ width: "982px", height: "400px" }} alt="..." />
+                                                                <div className={`carousel-item  ${index===0?"active":""}`} data-bs-interval="2000">
+                                                                    <img src={pst} className="d-block rounded img-fluid" style={{ width: "982px", height: "400px" }} alt="..." />
                                                                 </div>
                                                                 :
                                                                 <div className={`carousel-item ${index===0?"active":"active"}`} data-bs-interval="2000">
-                                                                    <video src={pst} className="d-block rounded" style={{ width: "982px", height: "400px" }} controls ></video>
+                                                                    <video src={pst} className="d-block rounded img-fluid" style={{ width: "982px", height: "400px" }} controls ></video>
                                                                 </div>
                                                         }
 
