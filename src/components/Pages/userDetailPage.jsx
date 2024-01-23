@@ -131,7 +131,7 @@ export function UserDetailpage() {
                                 <span className="fw-bold">Password</span> : <span>{user.password}</span> 
                             </p>
                             <p>
-                                <span className="fw-bold" >Account</span> :  {user.isverified === true ? <span className="text-success fw-bolder">Verified</span> : <span className="text-danger fw-bolder ">Unverified</span>}
+                                <span className="fw-bold" >Account</span> :  {user.isemailverified === true ? <span className="text-success fw-bolder">Verified</span> : <span className="text-danger fw-bolder ">Unverified</span>}
 
                             </p>
                             <p>
