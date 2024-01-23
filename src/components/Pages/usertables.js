@@ -1,4 +1,4 @@
-import {  CardBody, Table, Button} from "reactstrap";
+import { CardBody, Table, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import React from "react";
@@ -25,7 +25,7 @@ const ProjectTables = () => {
 
 
 
- 
+
   useEffect(() => {
 
     setcurrentData(storeUsers)
@@ -160,7 +160,13 @@ const ProjectTables = () => {
                   <td>{tdata.DOB ? tdata.DOB : "NaN"}</td>
                   <td>{tdata.primaryMarket ? tdata.primaryMarket : 'NaN'}</td>
                   <td>
-                    {tdata.isemailverified === true ? <span className="text-success fw-bolder">Verified</span> : <span className="text-danger fw-bolder ">Unverified</span>}
+                    {tdata.isemailverified === true ? (
+                      <span className="text-success fw-bolder">Verified</span>
+                    ) : tdata.isemailverified === false ? (
+                      <span className="text-danger fw-bolder">Unverified</span>
+                    ) : (
+                      <span className="text-muted fw-bolder">Not Available</span>
+                    )}
                   </td>
                   <td>
                     {tdata.status === true ? <button className={style.active}>Active</button> : <button className={style.suspend}>Suspended</button>}
