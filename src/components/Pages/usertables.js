@@ -160,7 +160,7 @@ const ProjectTables = () => {
                   <td>{tdata.DOB ? tdata.DOB : "NaN"}</td>
                   <td>{tdata.primaryMarket ? tdata.primaryMarket : 'NaN'}</td>
                   <td>
-                    {tdata.isverified === true ? <span className="text-success fw-bolder">Verified</span> : <span className="text-danger fw-bolder ">Unverified</span>}
+                    {tdata.isemailverified === true ? <span className="text-success fw-bolder">Verified</span> : <span className="text-danger fw-bolder ">Unverified</span>}
                   </td>
                   <td>
                     {tdata.status === true ? <button className={style.active}>Active</button> : <button className={style.suspend}>Suspended</button>}
