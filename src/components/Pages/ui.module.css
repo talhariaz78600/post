@@ -1,0 +1,565 @@
+.dropdown>div {
+  padding: px 40px 8px 30px !important;
+  text-align: center;
+}
+
+.Sheading {
+  background-color: black;
+}
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black */
+  z-index: 12000;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  /* Semi-transparent white */
+  border-top: 4px solid #ffffff;
+  /* White */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.Heading {
+  color: white;
+  padding-left: 2px;
+
+}
+
+.mainDashboard {
+  /* background-color: aliceblue; */
+  padding: 10px;
+}
+
+.mainDashboard h2 {
+  color: rgb(25, 25, 123);
+  font-size: 20px;
+  border-radius: 20px;
+  /* background-color: aliceblue; */
+
+
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5;
+}
+
+.inputDivMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2;
+  margin: 25px 0 10px 0;
+}
+
+.SearchInput {
+  background-color: transparent;
+  border: 1px solid rgb(188, 181, 181);
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.inputDiv button {
+  border: 1px solid rgb(196, 194, 194);
+  background-color: silver;
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+
+}
+
+.active {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(33, 114, 33);
+  padding: 5px 20px 5px 20px;
+  text-align: center;
+}
+
+.suspend {
+  text-align: center;
+
+  padding: 5px 9px 5px 9px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: red;
+}
+
+.dropdown {
+  padding: 2px 5px;
+}
+
+.userProfile:hover h6 {
+  color: rgb(23, 23, 236);
+}
+
+.ProfleImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.ProfleImage img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.ProfileDIv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.ProfileDIv2 {
+
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.InnerDivs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.InnerDivs3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2;
+
+}
+
+.InnerDivs3 img {
+  margin-right: 20px;
+}
+
+.dropdownSelect button {
+  border: none;
+  padding: 4px 8px;
+  background-color: rgb(24, 24, 169);
+  color: white;
+  border-radius: 5px;
+}
+
+.collections {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 3;
+  row-gap: 3;
+  flex-wrap: wrap;
+  /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.imageDiv {
+  width: fit-content;
+  border-radius: 10px;
+  position: relative;
+  height: 360px;
+  width: 25vw;
+
+}
+
+.imageDiv img {
+  display: block;
+  width: 100%;
+}
+
+.DateMedia {
+  margin: 5px 0;
+  font-size: 15px;
+  margin: auto;
+  color: green;
+
+}
+
+.deletepost {
+  color: white;
+  padding: 3px 6px;
+  border: none;
+  background-color: orange;
+  border-radius: 10px;
+}
+
+.Nodata {
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: (-50%, 50%);
+
+}
+
+.MainContainermedia {
+  margin-top: 20px;
+}
+
+.MainContainermedia2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.MainContainermedia3 {
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.methodButton {
+
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin-top: 10px;
+}
+
+.BannerDiv {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 10px;
+
+}
+
+.BannerDiv h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.BannerContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 10px;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.soundcontainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 10px;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.BannerContainer .bannerName {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+
+.InputNameDiv {
+  width: fit-content;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.InputFileDiv {
+  width: fit-content;
+}
+
+.InputNameDiv input {
+  width: 20vw;
+}
+
+.inputFile {
+  width: 20vw;
+
+}
+
+.soundScontainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.soundDiv {
+  width: 25vw;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+@media (min-width:200px) and (max-width:500px) {
+  .soundDiv {
+    width: 80vw;
+  }
+
+  .InputNameDiv input {
+    width: 40vw;
+  }
+
+  .inputFile {
+    width: 40vw;
+  }
+}
+
+@media (min-width:501px) and (max-width:900px) {
+  .soundDiv {
+    width: 45vw;
+  }
+
+  .inputFile {
+    width: 40vw;
+  }
+
+  .InputNameDiv input {
+    width: 40vw;
+  }
+}
+
+
+.BannerButton {
+
+  background-color: rgb(43, 169, 43);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+
+}
+
+.BannerButton:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  color: rgb(53, 215, 53);
+  color: white;
+
+}
+
+.soundDiv button {
+  width: 100%;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.soundDiv button:hover {
+  width: 100%;
+  box-shadow: none;
+}
+
+.audioDiv {
+  margin: 10px 0;
+}
+
+.audioDiv audio {
+  width: 100%;
+
+  /* border: 1px solid; */
+  border-radius: 40px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.addToTopbutton {
+  padding: 8px 15px;
+  text-align: center;
+  color: white;
+  background-color: rgb(16, 155, 16);
+  border: none;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.removeFromTopbutton {
+  border-radius: 10px;
+  border: none;
+  padding: 8px 15px;
+  text-align: center;
+  color: white;
+  background-color: rgb(249, 39, 39);
+}
+
+.containerContent {
+  width: 97%;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+
+.HeadingContent {
+  padding: 0.4rem;
+  border-bottom: 2px solid black;
+}
+
+.Content {
+  padding: 0.4rem;
+
+  margin: 1rem 0;
+  border-radius: .5rem;
+  background-color: #ffffff;
+}
+
+.buttonApprove {
+  background-color: rgb(37, 181, 37);
+  border: none;
+  padding: .5rem;
+  color: white;
+  border-radius: .6rem;
+
+}
+
+.buttonApprove:hover {
+  background-color: rgb(7, 104, 7);
+}
+.buttonDisApprove {
+  background-color: rgb(233, 42, 42);
+  border: none;
+  padding: .5rem;
+  color: white;
+  border-radius: .6rem;
+
+}
+
+.buttonDisApprove:hover {
+  background-color: rgb(129, 4, 4);
+}
+
+
+
+.Box {
+  background-color: white;
+  border-radius: .5rem;
+  padding: .6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border: 1px solid greenyellow;
+  box-shadow: 5px 5px 10px rgba(176, 17, 17, 0.2);
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(44, 44, 186);
+}
+
+
+.buttonAdd {
+  background-color: orange;
+  border: none;
+  padding: .5rem 1rem;
+  color: white;
+  border-radius: .6rem;
+
+}
+
+.buttonAdd:hover {
+  background-color: rgb(167, 114, 15);
+}
+
+.buttonAdded {
+  background-color: rgb(99, 21, 21);
+  border: none;
+  padding: .5rem 1rem;
+  color: white;
+  border-radius: .6rem;
+
+}
+
+.buttonAdded:hover {
+  background-color: rgba(99, 21, 21, 0.822);
+}
+
+.buttonReject {
+  background-color: cadetblue;
+  border: none;
+  padding: .5rem 1rem;
+  color: white;
+  border-radius: .6rem;
+
+}
+
+.buttonReject:hover {
+  background-color: cadetblue;
+}
+.buttonBump {
+  background-color:green;
+  border: none;
+  padding: .5rem 1rem;
+  color: white;
+  border-radius: .6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2;
+
+}
+
+.buttonBump:hover {
+  background-color:  rgb(44, 180, 44); 
+}
+
+
+.postdetailDIv {
+   /* display: flex; */
+  justify-content: space-between;
+  align-items: center; 
+  gap: 2;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  /* padding: 40px; */
+  border-radius: 10px;
+
+
+}
