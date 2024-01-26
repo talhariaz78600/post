@@ -62,17 +62,22 @@ export function Login() {
     } catch (error) {
       setLoading(false)
       console.log(error);
-      if (error.response.status === 400) {
-        toast.error(error.response.data.message)
-      } else if (error.response.status === 401) {
-        toast.error(error.response.data.message)
-      } else if (error.response.status === 500) {
-        toast.error(error.response.data.message)
-      } else {
+      if (error.response) {
+
+        if (error.response.status === 400) {
+          toast.error(error.response.data.message)
+        } else if (error.response.status === 401) {
+          toast.error(error.response.data.message)
+        } else if (error.response.status === 500) {
+          toast.error(error.response.data.message)
+        }
+      }
+      else {
         toast.error("Failed to Login")
       }
     }
   }
+
 
   return (<>
 
@@ -151,7 +156,7 @@ export function Login() {
                 </div>
               </div>
 
-              
+
 
 
               <button type="submit" className={style.buttonLogin}>

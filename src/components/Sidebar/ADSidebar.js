@@ -103,9 +103,9 @@ const Sidebar = () => {
           <NavItem><strong> Ads </strong> </NavItem>
           <NavItem className="sidenav-bg">
             <Link
-              to={"/Admin/AdminDashboard/Ads"}
+              to={"/Admin/AdminDashboard/Tasks"}
               className={
-                location.pathname === "/Admin/AdminDashboard/Ads"
+                location.pathname === "/Admin/AdminDashboard/Tasks"
                   ? " text-primary bg-light fw-bold nav-link py-3 color"
                   : "nav-link text-secondary py-3"
               }
