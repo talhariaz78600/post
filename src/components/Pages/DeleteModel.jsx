@@ -96,6 +96,6 @@ export function DeleteModel(props) {
                 </Button>
             </ModalFooter>
         </Modal>
-        <Loader loading={loading} />
+        <Loader loading={false} />
     </div>)
 }
