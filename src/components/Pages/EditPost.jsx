@@ -46,30 +46,31 @@ export function EditPost(props) {
             setloading(true)
             let response = await axios.post(`${serverURL}/api/posts/${NewPost._id}/edit_post`, formData)
 
-            if (response && response.status === 200) {
-                setloading(false)
-                toast.success(response.data.message)
-                console.log(response.data.updatedPost);
-                dispatch(updatePost(response.data.updatedPost))
+            // if (response && response.status === 200) {
+            //     setloading(false)
+            //     toast.success(response.data.message)
+            //     console.log(response.data.updatedPost);
+            //     dispatch(updatePost(response.data.updatedPost))
 
-            }
-
+            // }
+                console.log(response);
 
         } catch (error) {
-            setloading(false)
-            if (error) {
-                if (error.response) {
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                    toast.error(error.response.data.message);
-                } else {
-                    toast.error("Failed to Update Post ");
-                }
-            }
-
+            // setloading(false)
+            // if (error) {
+            //     if (error.response) {
+            //         console.log(error.response.data);
+            //         console.log(error.response.status);
+            //         toast.error(error.response.data.message);
+            //     } else {
+            //         toast.error("Failed to Update Post ");
+            //     }
+            // }
+            console.log(error);
         }
         setNewPost('')
     }
+    
     return (<>
         <div>
 

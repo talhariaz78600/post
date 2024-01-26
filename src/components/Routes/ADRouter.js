@@ -7,6 +7,7 @@ import { PinnedPost } from "../Pages/PinnedPosts";
 import { Posts } from "../Pages/Posts";
 import { UserPosts } from "../Pages/userPosts";
 import { UserChats } from "../Pages/chats";
+import Ads from "../Pages/Ads";
 import GroupdetailPage from "../Pages/GroupdetailPage";
 import PostDetailPage from "../Pages/PostDetailPage";
 const FullLayout = lazy(() => import("./ADFullLayout"));
@@ -22,6 +23,7 @@ export const ThemeRoutes = [
       { path: "AdminDashboard/Groups", exact: true, element: <PrivateRouteAdmin element={<PinnedPost />} /> },
       { path: "AdminDashboard/Groups/:groupid", exact: true, element: <PrivateRouteAdmin element={<GroupdetailPage />} /> },
       { path: "AdminDashboard/Posts", exact: true, element: <PrivateRouteAdmin element={<Posts />} /> },
+      { path: "AdminDashboard/Ads", exact: true, element: <PrivateRouteAdmin element={<Ads />} /> },
       { path: "AdminDashboard/UserDetails/:id", exact: true, element: <PrivateRouteAdmin element={<UserDetailpage />} /> },
       { path: "AdminDashboard/UserDetails/:id/Posts", exact: true, element: <PrivateRouteAdmin element={<UserPosts />} /> },
       { path: "AdminDashboard/UserDetails/:id/UserChats", exact: true, element: <PrivateRouteAdmin element={<UserChats />} /> },

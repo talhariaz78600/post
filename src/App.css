@@ -119,3 +119,9 @@
 .warning{
   color: red;
 }
+/* Add this to your CSS */
+.modal-backdrop {
+  opacity: 0 !important;
+  background-color: transparent !important;
+}
+

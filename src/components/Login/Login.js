@@ -13,7 +13,7 @@ const serverURL = process.env.REACT_APP_SERVER_URL;
 // console.log(serverURL);
 const secretEnKey = process.env.REACT_APP_SECRET_ENC_KEY
 
-console.log(serverURL);
+
 
 export function Login() {
   let navigate = useNavigate();
