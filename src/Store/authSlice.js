@@ -6,6 +6,7 @@ const initialState = {
   users: [],
   AllPosts: [],
   PinnedPosts: [],
+  Ads: [],
 
 };
 
@@ -24,6 +25,12 @@ const authSlice = createSlice({
     },
     addUser: (state, action) => {
       state.users = [...state.users, action.payload];
+    },
+    allAdsStore: (state, action) => {
+      state.Ads = action.payload;
+    },
+    addAd: (state, action) => {
+      state.Ads = [...state.Ads, action.payload];
     },
     removeUser: (state, action) => {
       const { _id } = action.payload;
@@ -178,8 +185,9 @@ export const selecteUsers = (state) => state.auth.users;
 export const selectAdmin = (state) => state.auth.admin;
 export const selectAllPosts = (state) => state.auth.AllPosts;
 export const selectAllPinnedPosts = (state) => state.auth.PinnedPosts;
+export const selectAllAds = (state) => state.auth.Ads;
 
 
-export const { login, logout, allusers, removeUser, allPosts, allBumperPosts, removePosts, updatePostStatus, addPinnedPosts, removePinnedPosts, updateBumperPostStatus, addNewPosts, updatePost, BumpPost } = authSlice.actions;
+export const {  addAd, allAdsStore, login, logout, allusers, removeUser, allPosts, allBumperPosts, removePosts, updatePostStatus, addPinnedPosts, removePinnedPosts, updateBumperPostStatus, addNewPosts, updatePost, BumpPost } = authSlice.actions;
 
 export default authSlice.reducer;
